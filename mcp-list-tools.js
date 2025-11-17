@@ -44,6 +44,18 @@ async function main() {
     });
     console.log("Echo result:", result.content);
 
+    const sumResponse = await client.callTool({
+      name: "sum",
+      arguments: { a: 10, b: 32 },
+    });
+    console.log("Sum response:", sumResponse.content);
+
+    const fetchResp = await client.callTool({
+      name: "fetch_url",
+      arguments: { url: "https://www.google.com", maxChars: 300 },
+    });
+    console.log("Fetch result:\n", fetchResp.content[0].text);
+
     await client.close();
 
     if (typeof transport.close === "function") {
