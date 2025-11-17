@@ -1,0 +1,26 @@
+{
+  "name": "mcp-playground",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tools": "node mcp-list-tools.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikita-bekish/mcp-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikita-bekish/mcp-playground/issues"
+  },
+  "homepage": "https://github.com/nikita-bekish/mcp-playground#readme",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "zod": "^3.25.76"
+  }
+}
