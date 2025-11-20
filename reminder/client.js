@@ -8,7 +8,7 @@ export async function createClient(serverScript) {
   });
 
   const client = new Client({
-    name: "composition-client",
+    name: "reminder-client",
     version: "1.0.0",
   });
 
