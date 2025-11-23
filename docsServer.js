@@ -1,10 +1,9 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import fs from "fs";
-import { z } from "zod";
-// import { zodToJsonSchema } from "zod-to-json-schema";
 import dotenv from "dotenv";
+import fs from "fs";
 import OpenAI from "openai";
+import { z } from "zod";
 
 dotenv.config();
 
@@ -39,10 +38,6 @@ function smartSearch(query, documents) {
 
   return results;
 }
-
-// ЛОГИ ТОЛЬКО В STDERR
-// process.stderr.write("=== DOCS SERVER STARTED ===\n");
-// process.stderr.write("SERVER START PHASE 1\n");
 
 // -------------------------
 //   MOCK DOCUMENT STORAGE
@@ -79,23 +74,6 @@ Node.js является мощной средой для разработки M
 инструментов и предотвращать ошибки на уровне протокола.
 `,
 };
-
-// -------------------------
-//   ZOD SCHEMAS
-// -------------------------
-
-const searchDocsSchema = z.object({
-  query: z.string().min(1).describe("Search query"),
-});
-
-const summarizeSchema = z.object({
-  text: z.string().min(1).describe("Text to summarize"),
-});
-
-const saveToFileSchema = z.object({
-  filename: z.string().min(1).describe("Filename to save into"),
-  content: z.string().min(1).describe("Content to save"),
-});
 
 // -------------------------
 //   MCP SERVER
